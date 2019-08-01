@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        // Angular mocks
+        "inject": true,
+        "module": true,
+
+        // Jasmine
+        "describe": true,
+        "beforeEach": true,
+        "it": true,
+        "expect": true,
+        "spyOn": true,
+
+        // Angular
+        "angular": true,
+        "app": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "no-console": "warn"
+    }
+}

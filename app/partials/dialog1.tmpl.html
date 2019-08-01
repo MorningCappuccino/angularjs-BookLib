@@ -1,0 +1,56 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Edit book</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon
+                            md-svg-src="app/img/close.svg"
+                            aria-label="Close dialog"
+                    ></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div layout="column">
+                    <md-input-container>
+                        <label>Title</label>
+                        <input type="text" ng-model="currentBook.title" aria-label="Title"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Author</label>
+                        <input type="text" ng-model="currentBook.author" aria-label="Author"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Year</label>
+                        <input type="text" ng-model="currentBook.year" aria-label="Year"/>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Page count</label>
+                        <input type="text" ng-model="currentBook.page_count" aria-label="Page count"/>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button
+                    href="http://en.wikipedia.org/wiki/Mango"
+                    target="_blank"
+                    md-autofocus
+            >
+                More on Wikipedia
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                Cancel
+            </md-button>
+            <md-button ng-click="answer({action: 'save', data: currentBook})">
+                Save
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

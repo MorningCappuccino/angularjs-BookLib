@@ -1,0 +1,27 @@
+<!--<div ng-controller="BookController"> //why this don't need?? -->
+<div>
+    <h3>Add book</h3>
+    <form novalidate name="bookForm" layout="column" ng-submit="bookForm.$valid && addBook()">
+        <md-input-container>
+            <label>title</label>
+            <input type="text" minlength=3 ng-model="inputData.title" required/>
+        </md-input-container>
+        <md-input-container>
+            <label>author</label>
+            <input type="text" ng-model="inputData.author"/>
+        </md-input-container>
+        <md-input-container>
+            <label>year</label>
+            <input type="text" ng-model="inputData.year"/>
+        </md-input-container>
+        <md-input-container>
+            <label>page count</label>
+            <input type="text" ng-model="inputData.pageCount"/>
+        </md-input-container>
+        <md-input-container>
+            <md-button type="submit" class="md-primary">
+                add
+            </md-button>
+        </md-input-container>
+    </form>
+</div>

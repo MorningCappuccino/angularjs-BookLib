@@ -1,0 +1,48 @@
+<!--<div ng-controller="BookController"> //why this don't need?? -->
+<div>
+    <md-content class="md-padding" layout-xs="column" layout="column">
+        <h3>Books</h3>
+        <h4 id="searchTitle">Search book</h4>
+        <div>
+            <div id="NVDADiv" aria-label="text for screen reader"></div>
+            <input
+                type="text"
+                ng-model="searchText"
+                placeholder="Search a book"
+                aria-labelledby="searchTitle NVDADiv"
+            />
+        </div>
+        <h4>Book list</h4>
+        <button ng-click="init()">init()</button>
+
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <div ng-repeat="book in books | filter: searchText">
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <a href="#!/book/{{ book._id }}">
+                                <span class="md-headline">{{ book.title }}</span>
+                            </a>
+                            <span class="md-subhead">{{ book.author }}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <book-info></book-info>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button
+                            class="md-raised md-warn"
+                            ng-click="editBook($event, book)"
+                            >edit</md-button
+                        >
+                        <md-button
+                            class="md-raised md-primary"
+                            ng-click="removeBook(book._id)"
+                            >delete</md-button
+                        >
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </div>
+    </md-content>
+</div>
